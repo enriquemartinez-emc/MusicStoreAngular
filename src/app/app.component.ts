@@ -4,7 +4,16 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <app-header-bar></app-header-bar>
-    <router-outlet></router-outlet>
+    <main class="container">
+      <div class="row">
+        <div class="col-2">
+          <app-genre-picker></app-genre-picker>
+        </div>
+        <div class="col-10">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </main>
   `,
 })
 export class AppComponent {
