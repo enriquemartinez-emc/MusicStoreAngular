@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-genre-picker',
   template: `
-    <h5>Genres</h5>
-    <hr />
+    <h4 class="card-title">Genres</h4>
     <nav class="nav flex-column">
       <a class="nav-link" href="#">Rock</a>
       <a class="nav-link" href="#">Jazz</a>
