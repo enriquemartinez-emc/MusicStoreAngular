@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
-import { NgbToast } from '@ng-bootstrap/ng-bootstrap';
+import { BehaviorSubject } from 'rxjs';
+import { Toast } from '../models';
 
 @Injectable({ providedIn: 'root' })
 export class ToastService {
-  constructor(private toast: NgbToast) {}
+  private toastSubject = new BehaviorSubject<Toast>({
+    header: '',
+    body: '',
+  });
 
-  showToast(message: string) {
-    this.toast.delay = 4000;
-    this.toast.
+  toast$ = this.toastSubject.asObservable();
+
+  show(header: string, body: string) {
+    this.toastSubject.next({ header, body });
   }
 }
