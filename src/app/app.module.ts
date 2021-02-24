@@ -7,14 +7,26 @@ import { NgbModule, NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { declarations } from './core';
 import { SharedModule } from './shared/shared.module';
 
+import { FeatherModule } from 'angular-feather';
+import { Camera, Heart, Github } from 'angular-feather/icons';
+
+// Select some icons (use an object, not an array)
+const icons = {
+  Camera,
+  Heart,
+  Github,
+};
+
+const ngbModules = [NgbModule, NgbToastModule];
+
 @NgModule({
   declarations: [AppComponent, declarations],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FeatherModule.pick(icons),
     SharedModule,
-    NgbToastModule,
-    NgbModule,
+    ...ngbModules,
   ],
   providers: [],
   bootstrap: [AppComponent],

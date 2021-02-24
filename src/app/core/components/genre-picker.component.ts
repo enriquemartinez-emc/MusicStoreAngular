@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <h4 class="card-title">Genres</h4>
     <nav class="nav flex-column">
-      <a class="nav-link" href="#">Rock</a>
+      <a class="nav-link" href="#"> Rock </a>
       <a class="nav-link" href="#">Jazz</a>
       <a class="nav-link" href="#">Pop</a>
       <a class="nav-link" href="#">Reggae</a>

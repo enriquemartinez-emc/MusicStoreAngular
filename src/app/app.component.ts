@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
           <app-genre-picker></app-genre-picker>
         </div>
         <div class="col-10">
+          <app-toast></app-toast>
           <router-outlet></router-outlet>
         </div>
       </div>

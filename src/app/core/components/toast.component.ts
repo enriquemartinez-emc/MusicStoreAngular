@@ -1,27 +1,27 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Toast } from '../models';
 import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-toast',
   template: `
-    <ngb-toast [header]="toast.header" [autohide]="true" [delay]="4000"
-      >{{ toast.body }}
-    </ngb-toast>
+    <style>
+      :host {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 0.5em;
+        z-index: 1200;
+      }
+    </style>
+    <div *ngIf="toast$ | async as toast">
+      <ngb-toast [header]="toast.header" [autohide]="true" [delay]="4000"
+        >{{ toast.body }}
+      </ngb-toast>
+    </div>
   `,
 })
-export class ToastComponent implements OnDestroy {
-  private subs = new Subscription();
-  toast: Toast = {} as Toast;
+export class ToastComponent {
+  toast$ = this.toastService.toast$;
 
-  constructor(private toastService: ToastService) {
-    this.subs.add(
-      this.toastService.toast$.subscribe((toast) => (this.toast = toast))
-    );
-  }
-
-  ngOnDestroy() {
-    this.subs.unsubscribe();
-  }
+  constructor(private toastService: ToastService) {}
 }
