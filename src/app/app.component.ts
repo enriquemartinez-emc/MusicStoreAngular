@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <app-header-bar></app-header-bar>
-    <main class="container-fluid">
+    <main class="container">
       <div class="row">
         <div class="col-2">
           <app-genre-picker></app-genre-picker>
