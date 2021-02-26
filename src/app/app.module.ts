@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 
 import { FeatherModule } from 'angular-feather';
 import { Camera, Heart, Github } from 'angular-feather/icons';
+import { HttpClientModule } from '@angular/common/http';
 
 // Select some icons (use an object, not an array)
 const icons = {
@@ -23,9 +24,10 @@ const ngbModules = [NgbModule, NgbToastModule];
   declarations: [AppComponent, declarations],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FeatherModule.pick(icons),
+    HttpClientModule,
     SharedModule,
+    FeatherModule.pick(icons),
+    AppRoutingModule,
     ...ngbModules,
   ],
   providers: [],

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ToastService } from '../services/toast.service';
 
 @Component({
@@ -14,7 +14,11 @@ import { ToastService } from '../services/toast.service';
       }
     </style>
     <div *ngIf="toast$ | async as toast">
-      <ngb-toast [header]="toast.header" [autohide]="true" [delay]="4000"
+      <ngb-toast
+        [header]="toast.header"
+        [class]="toast.className"
+        [autohide]="true"
+        [delay]="4000"
         >{{ toast.body }}
       </ngb-toast>
     </div>

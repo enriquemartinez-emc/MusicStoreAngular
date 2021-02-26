@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AlbumsComponent } from './albums.component';
+import { AlbumListComponent } from './album-list.component';
 
 export const routes: Routes = [
   {
@@ -11,7 +12,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [AlbumsComponent, AlbumListComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })
 export class AlbumsModule {}
