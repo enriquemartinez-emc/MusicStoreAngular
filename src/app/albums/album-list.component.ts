@@ -5,7 +5,7 @@ import { Album } from '../core';
   selector: 'app-album-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="col-3" **ngFor="let album of albums">
+    <div class="col-3" *ngFor="let album of albums">
       <div class="card h-100">
         <img src="{{ album.albumArtUrl }}" class="card-img-top" alt="..." />
         <div class="card-body">

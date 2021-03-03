@@ -13,14 +13,17 @@ import { AlbumService } from './album.service';
           <hr />
         </div>
       </div>
-      <div class="row" *ngIf="topSellingAlbums$ | async as topSellingAlbums">
+      <div
+        class="row"
+        *ngIf="(topSellingAlbums$ | async)?.albums as topSellingAlbums"
+      >
         <app-album-list [albums]="topSellingAlbums"></app-album-list>
       </div>
     </div>
   `,
 })
 export class AlbumsComponent implements OnInit {
-  topSellingAlbums$!: Observable<Album[]>;
+  topSellingAlbums$!: Observable<{ albums: Album[]; albumsCount: number }>;
 
   constructor(private albumService: AlbumService) {}
 
