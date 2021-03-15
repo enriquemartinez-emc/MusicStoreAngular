@@ -6,17 +6,14 @@ import { AlbumService } from './album.service';
 @Component({
   selector: 'app-albums',
   template: `
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-12">
           <h1>Top Selling Albums</h1>
           <hr />
         </div>
       </div>
-      <div
-        class="row"
-        *ngIf="(topSellingAlbums$ | async)?.albums as topSellingAlbums"
-      >
+      <div *ngIf="(topSellingAlbums$ | async)?.albums as topSellingAlbums">
         <app-album-list [albums]="topSellingAlbums"></app-album-list>
       </div>
     </div>
